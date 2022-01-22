@@ -94,13 +94,31 @@ class Board:
         for file in range(8):
             self.board[6][file] = Pawn("Pawn", "white")
 
+    def return_pieces(self, color, board):
+        """
+        Return's a list of all the active pieces on the board
+        :param color: color of pieces you want to find, a string
+        :param board: a current state of the board object
+        :return: an array of all the color pieces
+        """
+        all_pieces = []
+
+        for rank in range(8):
+            for file in range(8):
+                if board[rank][file] != "  ":
+                    if board[rank][file].color == color:
+                        all_pieces.append(board[rank][file])
+        return all_pieces
+
     def render_board(self):
         """
         Will display the board in a readable format on the console.
 
         :return: A string of the board array.
         """
-        pass
+        rank = 8
+        render = "Current Board State:\n"
+        for rank in range(8)
 
     def move_piece(self, board, input_in_chess_notation):
         """
