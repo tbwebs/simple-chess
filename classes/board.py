@@ -100,8 +100,7 @@ class Board:
 
         :return: A string of the board array.
         """
-        render = ""
-
+        pass
 
     def move_piece(self, board, input_in_chess_notation):
         """
