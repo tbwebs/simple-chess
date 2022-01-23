@@ -1,8 +1,6 @@
-
 import random
 from classes.pieces import *
-from classes.colored import *
-BOARD_SIZE = 64
+from colored import fg, bg, attr
 
 
 class Board:
@@ -13,7 +11,7 @@ class Board:
 
         Will also create a board hash in this class for easier lookup with the string inputs from the player.
         """
-        self.board = [["  " for _ in range(8)] for _ in range(8)]
+        self.board = [["   " for _ in range(8)] for _ in range(8)]
         self.board_hash = [[[random.randint(1, 2 ** 64 - 1) for _ in range(12)] for _ in range(8)] for _ in range(8)]
 
     def piece_indexing(self, piece_name):
@@ -105,7 +103,7 @@ class Board:
 
         for rank in range(8):
             for file in range(8):
-                if board[rank][file] != "  ":
+                if board[rank][file] != "   ":
                     if board[rank][file].color == color:
                         all_pieces.append(board[rank][file])
         return all_pieces
@@ -116,9 +114,38 @@ class Board:
 
         :return: A string of the board array.
         """
-        rank = 8
-        render = "Current Board State:\n"
-        for rank in range(8)
+        rank_num = 8
+        render = ""
+        for rank in range(len(self.board)):
+            render += "\n" + str(rank_num) + " "
+            rank_num -= 1
+            for file in range(len(self.board[rank])):
+                if (rank + file) % 2 == 0:
+                    render += Colored.bg_dark_gray + str(self.board[rank][file]) + Colored.reset
+                else:
+                    render += Colored.bg_light_gray + str(self.board[rank][file]) + Colored.reset
+        print(render)
+
+        #         if square != "  ":
+        #             while (row + square) % 2 == 0:
+        #                 if square.color == "white":
+        #                     render += Colored.white + Colored.bg_dark_gray + square + Colored.reset
+        #                 else:
+        #                     render += Colored.black + Colored.bg_dark_gray + square + Colored.reset
+        #             else:
+        #                 if square.color == "white":
+        #                     render += Colored.white + Colored.bg_light_gray + square + Colored.reset
+        #                 else:
+        #                     render += Colored.black + Colored.bg_light_gray + square + Colored.reset
+        #         else:
+        #             while rank % 2 == 0 and file % 2 == 0:
+        #                 render += Colored.bg_light_gray + square + Colored.reset
+        #             else:
+        #                 render += Colored.bg_dark_gray + square + Colored.reset
+        #
+        #     render += "\n" + Colored.blue + "   a  b  c  d  e  f  g  h" + Colored.reset
+        #
+        # return render
 
     def move_piece(self, board, input_in_chess_notation):
         """

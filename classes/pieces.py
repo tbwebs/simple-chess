@@ -73,7 +73,7 @@ class Pawn(Piece):
         pass
 
     def __repr__(self):
-        return "\u2659"
+        return " \u2659 "
 
     def __str__(self):
         return self.__repr__()
@@ -95,7 +95,7 @@ class Rook(Piece):
         pass
 
     def __repr__(self):
-        return "\u2656"
+        return " \u2656 "
 
     def __str__(self):
         return self.__repr__()
@@ -117,7 +117,7 @@ class Knight(Piece):
         pass
 
     def __repr__(self):
-        return "\u2658"
+        return " \u2658 "
 
     def __str__(self):
         return self.__repr__()
@@ -139,7 +139,7 @@ class Bishop(Piece):
         pass
 
     def __repr__(self):
-        return "\u2657"
+        return " \u2657 "
 
     def __str__(self):
         return self.__repr__()
@@ -161,7 +161,7 @@ class Queen(Piece):
         pass
 
     def __repr__(self):
-        return "\u2655"
+        return " \u2655 "
 
     def __str__(self):
         return self.__repr__()
@@ -183,7 +183,7 @@ class King(Piece):
         pass
 
     def __repr__(self):
-        return "\u2654"
+        return " \u2654 "
 
     def __str__(self):
         return self.__repr__()

@@ -1,7 +1,7 @@
 from colored import fg, bg, attr
 
 
-class Coloring:
+class colored:
     reset = attr("reset")
     bold = attr("bold")
     red = fg("red")
@@ -10,4 +10,3 @@ class Coloring:
     bg_dark_gray = bg("dark_gray")
     white = fg("white")
     black = fg("black")
-
